@@ -19,14 +19,14 @@ $(function() {
             }
             $.ajax({
                 // url: "././mail/contactme.php",
-                url: "contactme.php",
-                // type: "POST",
-                // data: {
-                //     name: name,
-                //     phone: phone,
-                //     email: email,
-                //     message: message
-                // },
+                url: "Mailer/contactme.php",
+                type: "POST",
+                data: {
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    message: message
+                },
                 cache: false,
                 success: function() {
                     // Success message
