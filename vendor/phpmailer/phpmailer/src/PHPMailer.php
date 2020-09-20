@@ -9,7 +9,7 @@
  * @author    Jim Jagielski (jimjag) <jimjag@gmail.com>
  * @author    Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  * @author    Brent R. Matzelle (original founder)
- * @copyright 2012 - 2020 Marcus Bointon
+ * @copyright 2012 - 2019 Marcus Bointon
  * @copyright 2010 - 2012 Jim Jagielski
  * @copyright 2004 - 2009 Andy Prevost
  * @license   http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
@@ -899,7 +899,6 @@ class PHPMailer
         switch ($this->Debugoutput) {
             case 'error_log':
                 //Don't output, just log
-                /** @noinspection ForgottenDebugOutputInspection */
                 error_log($str);
                 break;
             case 'html':
@@ -1351,7 +1350,7 @@ class PHPMailer
                 /*
                  * This is the pattern used in the HTML5 spec for validation of 'email' type form input elements.
                  *
-                 * @see https://html.spec.whatwg.org/#e-mail-state-(type=email)
+                 * @see http://www.whatwg.org/specs/web-apps/current-work/#e-mail-state-(type=email)
                  */
                 return (bool) preg_match(
                     '/^[a-zA-Z0-9.!#$%&\'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}' .
@@ -2003,12 +2002,7 @@ class PHPMailer
             }
             $host = $hostinfo[2];
             $port = $this->Port;
-            if (
-                array_key_exists(3, $hostinfo) &&
-                is_numeric($hostinfo[3]) &&
-                $hostinfo[3] > 0 &&
-                $hostinfo[3] < 65536
-            ) {
+            if (array_key_exists(3, $hostinfo) && is_numeric($hostinfo[3]) && $hostinfo[3] > 0 && $hostinfo[3] < 65536) {
                 $port = (int) $hostinfo[3];
             }
             if ($this->smtp->connect($prefix . $host, $port, $this->Timeout, $options)) {
@@ -2386,18 +2380,21 @@ class PHPMailer
 
         $result .= $this->headerLine('Date', '' === $this->MessageDate ? self::rfcDate() : $this->MessageDate);
 
-        // The To header is created automatically by mail(), so needs to be omitted here
-        if ('mail' !== $this->Mailer) {
-            if ($this->SingleTo) {
+        // To be created automatically by mail()
+        if ($this->SingleTo) {
+            if ('mail' !== $this->Mailer) {
                 foreach ($this->to as $toaddr) {
                     $this->SingleToArray[] = $this->addrFormat($toaddr);
                 }
-            } elseif (count($this->to) > 0) {
-                $result .= $this->addrAppend('To', $this->to);
-            } elseif (count($this->cc) === 0) {
-                $result .= $this->headerLine('To', 'undisclosed-recipients:;');
             }
+        } elseif (count($this->to) > 0) {
+            if ('mail' !== $this->Mailer) {
+                $result .= $this->addrAppend('To', $this->to);
+            }
+        } elseif (count($this->cc) === 0) {
+            $result .= $this->headerLine('To', 'undisclosed-recipients:;');
         }
+
         $result .= $this->addrAppend('From', [[trim($this->From), $this->FromName]]);
 
         // sendmail and mail() extract Cc from the header before sending
@@ -4218,7 +4215,6 @@ class PHPMailer
             'tiff' => 'image/tiff',
             'tif' => 'image/tiff',
             'webp' => 'image/webp',
-            'avif' => 'image/avif',
             'heif' => 'image/heif',
             'heifs' => 'image/heif-sequence',
             'heic' => 'image/heic',
