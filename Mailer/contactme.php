@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require_once "../vendor/autoload.php";
 $mail = new PHPMailer(true);
-
+echo 'hi';
 //Enable SMTP debugging.
 $mail->SMTPDebug = 3;                               
 //Set PHPMailer to use SMTP.
