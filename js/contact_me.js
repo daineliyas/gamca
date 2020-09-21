@@ -17,9 +17,12 @@ $(function() {
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
+           
             $.ajax({
                 url: "./Mailer/contactme.php",
                 type: "POST",
+                crossDomain: true,
+                dataType: 'jsonp',
                 data: {
                     name: name,
                     phone: phone,
@@ -30,6 +33,7 @@ $(function() {
                 success: function(response) {
                     //alert(response);
                     // Success message
+               
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");

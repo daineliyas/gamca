@@ -32,7 +32,7 @@ $mail->addReplyTo($_POST['email'], "Reply");
 $mail->isHTML(true);
 
 $mail->Subject = "Enquiry From : " . $_POST['name'];
-$mail->Body = $_POST['message'].'<br>Email: '.$_POST['email'].'<br>Phone: '.$_POST['phone'];
+$mail->Body = $_POST['message'].'<br> Email: '.$_POST['email'].'<br> Phone: '.$_POST['phone'];
 
 try {
     $mail->send();
@@ -40,3 +40,4 @@ try {
 } catch (Exception $e) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }
+?>
