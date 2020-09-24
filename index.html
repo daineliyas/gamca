@@ -11,15 +11,7 @@
 
     <title>GAMCA Cochin</title>
     <link href="images/favicon.png" rel="icon">
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-      window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function() {
-        OneSignal.init({
-          appId: "2bb8be9c-f6e4-41a6-9753-2d9a3aac9361",
-        });
-      });
-    </script>
+  
 
     <!-- Bootstrap Core CSS -->
     <link href="asset/css/bootstrap.min.css" rel="stylesheet">
@@ -586,7 +578,6 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <div  class="row" id="map"></div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title text-center">
@@ -605,7 +596,7 @@
   action="https://formspree.io/xoqpqelk"
   method="POST" >
   <div class="row">
-    <div class="col-md-12 text-center">
+    <div class="col-md-12">
         <div class="form-group">
   <label class="text-white">Email:</label>
   <input type="email" name="email" class="form-control" placeholder="your.name@email.com *"   data-validation-required-message="Please enter your email address." />
@@ -615,12 +606,16 @@
   <input type="text" name="message" class="form-control" placeholder="Your Message *" required data-validation-required-message="Please enter a message." />
 </div>
 </div></div>
+<div class="text-center">
+
+
   <button id="my-form-button" class="btn btn-primary">  <i class="fa fa-paper-plane"></i>&nbsp;Send Message</button>
   <button onclick="myFunction()" class="btn btn-primary"><i class="fa fa-whatsapp"></i> WhatsApp Us</button>
   <p id="my-form-status"></p>
+</div>
 </form>
    
-
+<br/><br/>
                     <!-- <form name="sentMessage" id="contactForm" novalidate method="post" action="./Mailer/contactme.php">
                         <div class="row">
                             <div class="col-md-6">
@@ -657,30 +652,51 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="footer-contact-info">
-                        <h4>Address</h4>
-                        <ul>
-                            <li><strong>Image Travels</strong></li>
-                            <li><strong>Ground Floor, Manavalan Building</strong></li>
-                            <li><strong>Amulya Street, Ernakulam, Kerala</strong></li>
-                            <li><strong>Pin: 682018. Ph: 8089434967</strong></li>
-                        </ul>
-                    </div>
+                <div class="col-md-6">
+                    <iframe width="700" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" 
+                    src="https://maps.google.com/maps?width=728&amp;height=413&amp;hl=en&amp;q=Amulya%20St%20%20ERNAKULAM+(GAMCA%20COCHIN%20,Image%20Travels%20Ground%20Floor,%20Manavalan%20Building,%20)&amp;t=&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                </iframe> <a href='https://add-map.com/'></a> <script type='text/javascript' src='https://maps-generator.com/google-maps-authorization/script.js?id=b6ffce99dc255033335be06ca4815e90eca9b787'></script>
+                   
                 </div>
-                <div class="col-md-4 col-md-offset-4">
-                    <div class="footer-contact-info">
-                        <h4>Contact info</h4>
-                        <ul>
-                            <li><strong>E-mail :</strong> kinoshkochin2000@gmail.com</li>
-                            <!--<li><strong>E-mail :</strong> daineliyas@gmail.com</li>-->
-                            <!--<li><strong>Phone :</strong> +8801-6778776</li>-->
-                            <li><strong>Mobile :</strong> +91-8089434967</li>
-                            <li><strong>Web :</strong> gamcacochin.com</li>
-                        </ul>
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                        <div class="footer-contact-info">
+                                <h4>Address</h4>
+                                <ul>
+                                    <li><strong>Image Travels</strong></li>
+                                    <li><strong>Ground Floor, Manavalan Building</strong></li>
+                                    <li><strong>Amulya Street, Ernakulam, Kerala</strong></li>
+                                    <li><strong>Pin: 682018. Ph: 8089434967</strong></li>
+                                </ul>
+                        </div>
                     </div>
+                 </div>
+                       
+                        <div class="row">
+                            <div class="col-md-4">
+                            <div class="footer-contact-info">
+                                <h4>Contact info</h4>
+                                <ul>
+                                    <li><strong>E-mail :</strong> kinoshkochin2000@gmail.com</li>
+                                    <!--<li><strong>E-mail :</strong> daineliyas@gmail.com</li>-->
+                                    <!--<li><strong>Phone :</strong> +8801-6778776</li>-->
+                                    <li><strong>Mobile :</strong> +91-8089434967</li>
+                                    <li><strong>Web :</strong> gamcacochin.com</li>
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
                 </div>
             </div>
+           
         </div>
         <footer class="style-1">
             <div class="container">
@@ -724,9 +740,7 @@
         </div>
     </div>
 
-    <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
+  
 
     <script data-cfasync="false" type="text/javascript"
     src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
@@ -814,8 +828,20 @@
   window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
     formbutton("create", {action: "https://formspree.io/xoqpqelk"})
 
+
+
+
         </script>
         
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "2bb8be9c-f6e4-41a6-9753-2d9a3aac9361",
+        });
+      });
+    </script>
 </body>
 
 </html>

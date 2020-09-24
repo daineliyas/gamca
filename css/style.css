@@ -708,11 +708,13 @@ li {
 		font-size: 12px;
 	}
 	#main-slide .carousel-indicators{
-		display: none;
+        display: none;
+       
 	}
     
     #main-slide .item .slider-content{
-		display: none;
+        /* display: none; */
+        font-size: 12px !important;
 	}
     
     #main-slide .item {
@@ -725,7 +727,7 @@ li {
 @media (max-width : 479px) {
     
     #main-slide .item .slider-content{
-		display: none;
+        display: none;
 	}
     
     #main-slide .item {
