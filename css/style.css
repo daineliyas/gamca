@@ -823,7 +823,7 @@ li {
         font-size: 15px;
 		line-height: normal;
         margin-bottom: 0;
-        margin-top: -20px !important;
+        margin-top: -5px !important;
 	}
     
     #main-slide .item {
@@ -837,7 +837,7 @@ li {
 		font-size: 15px;
 		line-height: normal;
         margin-bottom: 0;
-        margin-top: -70px !important;
+        margin-top: -10px !important;
 	}
 	#main-slide .slider-content p{
 		font-size: 10px;
@@ -877,7 +877,7 @@ li {
     .animated2 .banner2 .banner1
     {
         font-size: 10px !important;
-        margin-top: -10px !important;
+        margin-top: -5px !important;
     }
 }
 
