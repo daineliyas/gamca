@@ -757,11 +757,11 @@ li {
         font-size: 28px;
 		line-height: normal;
         margin-bottom: 0;
-        margin-top: -70px !important;
+        margin-top: -50px !important;
 	}
     
     #main-slide .item {
-        height: 200px;
+        height: 250px;
     }
     .map{
         width: 400px !important;
@@ -823,11 +823,11 @@ li {
         font-size: 15px;
 		line-height: normal;
         margin-bottom: 0;
-        margin-top: -50px !important;
+        margin-top: -20px !important;
 	}
     
     #main-slide .item {
-        height: 200px;
+        height: 220px;
     }
     .map{
         width: 320px !important;
@@ -877,7 +877,7 @@ li {
     .animated2 .banner2 .banner1
     {
         font-size: 10px !important;
-        margin-top: -15px !important;
+        margin-top: -10px !important;
     }
 }
 
