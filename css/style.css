@@ -6,7 +6,11 @@ body {
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
 }
-
+.commonfont {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 14px !important;;
+    font-weight: 300 !important;;
+}
 
 p {
     font-size: 13px;
@@ -1162,7 +1166,7 @@ and (min-width : 551px){
 
 
 .latest-news-section {
-    padding-top: 80px;
+    padding-top: 0px;
     padding-bottom: 60px;
 }
 
